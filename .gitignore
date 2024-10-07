@@ -27,12 +27,8 @@ replay_pid*
 .idea/
 out/
 *.class
-*.jar
-*.war
-*.ear
 *.db
 *.hprof
-*.log
 *.swp
 *.swo
 .DS_Store
