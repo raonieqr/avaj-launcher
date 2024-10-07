@@ -1,9 +1,17 @@
 package main.java.com.avajlauncher.domain;
 
-public class Aircraft {
+import main.java.com.avajlauncher.contracts.Flyable;
+
+public class Aircraft implements Flyable {
     protected Long id;
     protected String name;
     protected Coordinates coordinates;
 
-    protected Aircraft(long p_id, String p_name, Coordinates p_coordinate) {}
+    public Aircraft() {}
+
+    @Override
+    public void updateCoditions() {}
+
+    @Override
+    public void registerTower() {}
 }
