@@ -1,6 +1,7 @@
 package main.java.com.avajlauncher.domain;
 
 import main.java.com.avajlauncher.contracts.Flyable;
+
 import java.util.List;
 
 public class Tower {

@@ -7,11 +7,19 @@ public class Aircraft implements Flyable {
     protected String name;
     protected Coordinates coordinates;
 
-    public Aircraft() {}
+    protected Aircraft(Long id, String name, Coordinates coordinate) {
+        this.id = id;
+        this.name = name;
+        this.coordinates = coordinate;
+    }
 
     @Override
-    public void updateCoditions() {}
+    public void updateConditions() {
+
+    }
 
     @Override
-    public void registerTower() {}
+    public void registerTower(WeatherTower p_tower) {
+
+    }
 }
