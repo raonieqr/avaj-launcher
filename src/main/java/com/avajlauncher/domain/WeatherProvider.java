@@ -4,7 +4,8 @@ public class WeatherProvider {
     private String[] weather;
     private static WeatherProvider instance;
 
-    private WeatherProvider() {}
+    private WeatherProvider() {
+    }
 
     public static WeatherProvider getInstance() {
         if (instance == null) {

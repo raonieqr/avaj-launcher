@@ -6,7 +6,6 @@ import main.java.com.avajlauncher.domain.*;
 public class AircraftFactory {
     private Long id = 0L;
 
-
     private Long generateId() {
         return this.id++;
     }
