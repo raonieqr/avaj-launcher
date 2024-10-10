@@ -1,5 +1,10 @@
 # Avaj Launcher
 
+<div align="center">
+  <img src="https://github.com/raonieqr/avaj-launcher/blob/master/docs/avajlauncher.png" alt="Frankfurt Airport Runway Simulator" width="200" />
+</div>
+
+
 ## Overview
 
 The Frankfurt Airport Runway Simulator aims to identify and analyze runway bottlenecks caused by frequent weather changes. The goal is to simulate various scenarios and provide insights into the conditions that create the worst bottlenecks, ultimately helping airport authorities optimize landing procedures.
