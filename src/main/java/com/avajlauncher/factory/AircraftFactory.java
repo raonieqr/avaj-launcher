@@ -1,7 +1,7 @@
-package main.java.com.avajlauncher.factory;
+package com.avajlauncher.factory;
 
-import main.java.com.avajlauncher.contracts.Flyable;
-import main.java.com.avajlauncher.domain.*;
+import com.avajlauncher.contracts.Flyable;
+import com.avajlauncher.domain.*;
 
 public class AircraftFactory {
     private Long id = 0L;

@@ -1,4 +1,4 @@
-package main.java.com.avajlauncher.domain;
+package com.avajlauncher.domain;
 
 public class JetPlane extends Aircraft {
 

@@ -1,7 +1,7 @@
-package main.java.com.avajlauncher.domain;
+package com.avajlauncher.domain;
 
-import main.java.com.avajlauncher.exceptions.InvalidHeightException;
-import main.java.com.avajlauncher.exceptions.NegativeCoordinateException;
+import com.avajlauncher.exceptions.InvalidHeightException;
+import com.avajlauncher.exceptions.NegativeCoordinateException;
 
 public class Coordinates {
     private int longitude;

@@ -1,6 +1,6 @@
-package main.java.com.avajlauncher.domain;
+package com.avajlauncher.domain;
 
-import main.java.com.avajlauncher.contracts.Flyable;
+import com.avajlauncher.contracts.Flyable;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package main.java.com.avajlauncher;
+package com.avajlauncher;
 
-import main.java.com.avajlauncher.domain.Baloon;
-import main.java.com.avajlauncher.domain.Coordinates;
-import main.java.com.avajlauncher.domain.Helicopter;
-import main.java.com.avajlauncher.factory.AircraftFactory;
+import com.avajlauncher.domain.Baloon;
+import com.avajlauncher.domain.Coordinates;
+import com.avajlauncher.domain.Helicopter;
+import com.avajlauncher.factory.AircraftFactory;
 
 public class Main {
     public static void main(String[] args) {

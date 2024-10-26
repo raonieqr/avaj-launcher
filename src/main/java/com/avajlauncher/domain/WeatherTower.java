@@ -1,4 +1,4 @@
-package main.java.com.avajlauncher.domain;
+package com.avajlauncher.domain;
 
 public class WeatherTower extends Tower {
     public String getWeather(Coordinates p_coordinates) {
