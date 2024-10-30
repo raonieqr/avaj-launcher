@@ -16,7 +16,13 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         try {
-            File file = new File("docs/scenario.txt");
+            //TODO: improve of text validations and create class for handle file
+            if (args.length == 0) {
+                System.err.println("Error: file path not provided.");
+                return;
+            }
+
+            File file = new File(args[0]);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
             String line = "";
@@ -29,8 +35,11 @@ public class Main {
                 index++;
             }
         }
+        catch (FileNotFoundException e) {
+            System.err.println("Error: file not found.");
+        }
         catch (Exception e) {
-            System.out.println("error");
+            System.err.println("error");
         }
 
         AircraftFactory aircraftFactory = new AircraftFactory();
