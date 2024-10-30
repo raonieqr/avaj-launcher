@@ -5,8 +5,34 @@ import com.avajlauncher.domain.Coordinates;
 import com.avajlauncher.domain.Helicopter;
 import com.avajlauncher.factory.AircraftFactory;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.InputMismatchException;
+import java.util.List;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+
+        try {
+            File file = new File("docs/scenario.txt");
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+
+            String line = "";
+            int index = 0;
+            while((line = bufferedReader.readLine()) != null) {
+                List<String> obj = List.of(line.split(" "));
+                if (obj.size() < 5 && index != 0)
+                    throw new InputMismatchException("Error: invalid param");
+                System.out.println(line);
+                index++;
+            }
+        }
+        catch (Exception e) {
+            System.out.println("error");
+        }
+
         AircraftFactory aircraftFactory = new AircraftFactory();
         Baloon baloon = (Baloon) aircraftFactory.newAircraft("baloon", "b1",
                 new Coordinates(1, 2, 3));
@@ -14,8 +40,5 @@ public class Main {
                 new Coordinates(1, 2, 3));
         Baloon baloon2 = (Baloon) aircraftFactory.newAircraft("baloon", "b2",
                 new Coordinates(1, 2, 3));
-        System.out.println(baloon.toString());
-        System.out.println(helicopter.toString());
-        System.out.println(baloon2.toString());
     }
 }
