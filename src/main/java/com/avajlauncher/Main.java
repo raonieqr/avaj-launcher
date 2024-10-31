@@ -4,16 +4,15 @@ import com.avajlauncher.domain.Baloon;
 import com.avajlauncher.domain.Coordinates;
 import com.avajlauncher.domain.Helicopter;
 import com.avajlauncher.factory.AircraftFactory;
+import main.java.com.avajlauncher.utils.FileHandler;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
         try {
             //TODO: improve of text validations and create class for handle file
@@ -22,21 +21,13 @@ public class Main {
                 return;
             }
 
-            File file = new File(args[0]);
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-
-            String line = "";
-            int index = 0;
-            while((line = bufferedReader.readLine()) != null) {
-                List<String> obj = List.of(line.split(" "));
-                if (obj.size() < 5 && index != 0)
-                    throw new InputMismatchException("Error: invalid param");
-                System.out.println(line);
-                index++;
-            }
+            System.out.println(FileHandler.readFile(args[0]));
         }
         catch (FileNotFoundException e) {
             System.err.println("Error: file not found.");
+        }
+        catch (IOException e) {
+            System.err.println("Error: when reading the file." );
         }
         catch (Exception e) {
             System.err.println("error");
