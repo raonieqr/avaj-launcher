@@ -21,7 +21,7 @@ public class Main {
                 return;
             }
 
-            System.out.println(FileHandler.readFile(args[0]));
+            FileHandler.validateFile(FileHandler.readFile(args[0]));
         }
         catch (FileNotFoundException e) {
             System.err.println("Error: file not found.");
@@ -29,8 +29,11 @@ public class Main {
         catch (IOException e) {
             System.err.println("Error: when reading the file." );
         }
+        catch (InputMismatchException e) {
+            System.err.println("Error: invalid param.");
+        }
         catch (Exception e) {
-            System.err.println("error");
+            System.err.println("Error: fatal.");
         }
 
         AircraftFactory aircraftFactory = new AircraftFactory();
