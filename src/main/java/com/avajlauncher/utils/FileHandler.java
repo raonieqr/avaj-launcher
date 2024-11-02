@@ -31,14 +31,23 @@ public final class FileHandler {
         return allLines;
     }
 
-    public static void validateFile(List<String> fileContent) {
-        IntStream.range(0, fileContent.size()).forEach(idx -> {
-            List<String> splitLine = List.of(fileContent.get(idx).split(" "));
+    public static List<String[]> validateFile(List<String> fileContent) {
+    List<String[]> allLinesSplited = new ArrayList<>();
 
-            if ((splitLine.size() != 5) && idx != 0 || idx == 0 && splitLine.size() > 1) {
-                throw new InputMismatchException();
-            }
-        });
-    }
+    IntStream.range(0, fileContent.size()).forEach(idx -> {
+        String[] splitLine = fileContent.get(idx).split(" ");
+        
+        
+        if ((splitLine.length != 5 && idx != 0) || (idx == 0 && splitLine.length > 1)) {
+            throw new InputMismatchException();
+        }
+
+        allLinesSplited.add(splitLine);
+    });
+
+    return allLinesSplited;
+
+}
+
 
 }
