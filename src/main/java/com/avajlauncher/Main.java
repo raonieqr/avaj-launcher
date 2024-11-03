@@ -15,13 +15,13 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            //TODO: improve of text validations and create class for handle file
+
             if (args.length == 0) {
                 System.err.println("Error: file path not provided.");
                 return;
             }
-
-            FileHandler.validateFile(FileHandler.readFile(args[0]));
+            AircraftFactory aircraftFactory = new AircraftFactory();
+            System.out.println(aircraftFactory.buildAircraftFleet(FileHandler.validateFile(FileHandler.readFile(args[0]))).toString());
         }
         catch (FileNotFoundException e) {
             System.err.println("Error: file not found.");
@@ -33,7 +33,7 @@ public class Main {
             System.err.println("Error: invalid param.");
         }
         catch (Exception e) {
-            System.err.println("Error: fatal.");
+            System.err.println("Error: fatal. " + e);
         }
 
         AircraftFactory aircraftFactory = new AircraftFactory();

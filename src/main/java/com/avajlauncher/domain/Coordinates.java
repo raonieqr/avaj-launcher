@@ -12,12 +12,13 @@ public class Coordinates {
         if (longitude < 0 || latitude < 0)
             throw new NegativeCoordinateException("Error: coordinates cannot be negative");
 
-        if (height < 0 || height > 100)
-            throw new InvalidHeightException("Error: the height must be in the 0-100 range");
+        if (height < 0) {
+          throw new 
+        }
 
         this.longitude = longitude;
         this.latitude = latitude;
-        this.height = height;
+        this.height = adjustHeight(height);
     }
 
     public int getLongitude() {
@@ -30,6 +31,16 @@ public class Coordinates {
 
     public int getHeight() {
         return height;
+    }
+
+    public int adjustHeight(int height) {
+      if (height == 0)
+        return 0;
+
+      if (height > 100)
+        return 100;
+
+      return height;
     }
 
 }
