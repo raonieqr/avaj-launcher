@@ -2,6 +2,7 @@ package com.avajlauncher.factory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import com.avajlauncher.contracts.Flyable;
 import com.avajlauncher.domain.*;
@@ -29,10 +30,18 @@ public class AircraftFactory {
   public List<Flyable> buildAircraftFleet(List<String[]> aircraftData) {
     List<Flyable> aircraftList = new ArrayList<>();
 
-    aircraftData.forEach(line -> {
-      for (String type : line) {
+    IntStream.range(0, aircraftData.size()).forEach(idx -> {
+      if (idx != 0) {
 
-        Flyable aircraft = AircraftFactory.newAircraft();
+        String[] aircraftDataLine = aircraftData.get(idx);
+        String type = aircraftDataLine[0];
+        String name = aircraftDataLine[1];
+        int longitude = Integer.parseInt(aircraftDataLine[2]);
+        int latitude = Integer.parseInt(aircraftDataLine[3]);
+        int height = Integer.parseInt(aircraftDataLine[4]);
+
+        Coordinates coordinates = new Coordinates(longitude, latitude, height);
+        Flyable aircraft = newAircraft(type, name, coordinates);
 
         aircraftList.add(aircraft);
       }

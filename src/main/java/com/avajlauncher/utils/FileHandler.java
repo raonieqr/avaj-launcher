@@ -20,7 +20,8 @@ public final class FileHandler {
     if (!file.exists()) {
       throw new FileNotFoundException();
     }
-
+    
+    // TODO: close file
     BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
     String currentLine = "";
