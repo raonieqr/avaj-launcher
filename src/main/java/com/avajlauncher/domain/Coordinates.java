@@ -13,7 +13,7 @@ public class Coordinates {
             throw new NegativeCoordinateException("Error: coordinates cannot be negative");
 
         if (height < 0) {
-          throw new 
+          throw new InvalidHeightException("Error: height cannot be negative");
         }
 
         this.longitude = longitude;

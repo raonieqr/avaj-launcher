@@ -30,6 +30,8 @@ public final class FileHandler {
       allLines.add(currentLine);
     }
 
+    bufferedReader.close();
+
     return allLines;
   }
 
@@ -50,4 +52,14 @@ public final class FileHandler {
 
   }
 
+  public static void writeLog(String line) {
+    try {
+      FileWriter writer = new FileWriter("simulation.txt");
+      
+      writer.write(line);
+      writer.close();
+    } catch (IOException e) {
+      // TODO: Exception
+    }
+  }
 }
